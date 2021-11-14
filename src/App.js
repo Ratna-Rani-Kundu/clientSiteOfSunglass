@@ -7,6 +7,7 @@ import {
   Route
   
 } from "react-router-dom";
+import Products from './Pages/Products/Products/Products';
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
            </Route>
          <Route exact path="/home">
                <Home />
+           </Route>
+         <Route exact path="/products">
+               <Products></Products>
+           </Route>
+         <Route exact path="/reviews">
+               <Products></Products>
            </Route>
           
         </Switch>

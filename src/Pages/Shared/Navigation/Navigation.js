@@ -22,9 +22,9 @@ const Navigation = () => {
     <Nav className="me-auto">
     <Link className='text-light nav-link p-4 ' to="/home">Home</Link>
     
-      <Link className='text-light nav-link p-4' to="/services">Services</Link>
+      <Link className='text-light nav-link p-4' to="/products">Products</Link>
       
-      <Link className='text-light nav-link p-4' to="/booking">Booking</Link>
+      <Link className='text-light nav-link p-4' to="/review">Reviews</Link>
       <Link className='text-light nav-link p-4' to="/about">About</Link>
       <Link className='text-light nav-link p-4' to="/addService">Add Service</Link>
       
