@@ -3,13 +3,13 @@ import { Navbar,Container, Nav} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-
+ 
 const Navigation = () => {
   
     return (
-        <>
-  <Navbar collapseOnSelect expand="lg"  sticky="top" bg="dark" variant="dark">
-  <Container>
+      
+  <Navbar className="" collapseOnSelect expand="lg"  sticky="top" bg="dark" variant="dark">
+  <Container >
   <Navbar.Brand >
       <img
         src="https://cdn.shopify.com/s/files/1/1811/9385/files/logo_3afeb311-69a5-48c2-bc5c-3f9885c05965_300x300.png?v=1613038705"
@@ -40,7 +40,7 @@ const Navigation = () => {
     </Navbar.Collapse> */}
   </Container>
 </Navbar>
-        </>
+      
     );
 };
 
