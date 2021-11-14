@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavLink ,useHistory} from 'react-router-dom';
 
 import useAuth from '../../../hooks/useAuth'
-import { Button, Form, Spinner, Row, Container, Col,Alert } from 'react-bootstrap';
+import { Button, Form, Spinner, Row,  Col,Alert } from 'react-bootstrap';
 
 const Register = () => {
              const [loginData,setLoginData]=useState({})
@@ -30,9 +30,9 @@ const Register = () => {
            e.preventDefault()
   }
     return (
-        <Container>
+   
             <Row >
-              <Col >
+              <Col className='p-4' >
                    <h2>Registration</h2>
                      {!isLoading && 
                      <form onSubmit={handleLoginSubmit}>
@@ -108,7 +108,7 @@ const Register = () => {
                      <img style={{width:'100%'}} src='https://images.unsplash.com/photo-1568054043324-86c349f926d0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGpld2Vscnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt="" />
                    </Col> 
         </Row>
-      </Container>
+  
     );
 };
 

@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth'
 
 // import login from '../../../images/login.png'
 import { NavLink,useLocation,useHistory,} from 'react-router-dom';
-import { Button, Form, Spinner, Row, Container, Col,Alert } from 'react-bootstrap';
+import { Button, Form, Spinner, Row,Col,Alert } from 'react-bootstrap';
 
 
 const Login = () => {
@@ -31,17 +31,17 @@ const Login = () => {
     signInWithGoogle(location,history)
   }
     return (
-       <Container>
-           {/* container spacing={2} */}
+      
+          
          <Row>
-         {/* sx={{mt:8}} item xs={12} md={6} */}
-           <Col  >
-               <h3 >Login</h3> 
+        
+           <Col className='p-4' >
+               <h2 >Login</h2> 
             <form onSubmit={handleLoginSubmit} >
              <Form.Group className="mb-3" >
           
                <Form.Control
-               className="w-75 m-2"
+               className=" mb-2"
             
                  name="email"
                 onChange={handleOnChange}
@@ -49,7 +49,7 @@ const Login = () => {
                 type="email" 
               />
              <Form.Control
-             className="w-75 m-2"
+            
              
              name="password"
              onChange={handleOnChange}
@@ -59,12 +59,12 @@ const Login = () => {
             </Form.Group>
             
       
-                 <Button   type="submit"  variant="warning">Submit</Button>
+                 <Button   type="submit"  variant="success">Submit</Button>
                    <  NavLink to="/register">
                       <Button 
                         style={{ textDecoration: "none"}}
                         variant="text"
-                        className="text-info"
+                        className="text-success"
                         >New User? Pleaser Register</Button>
                    </NavLink>
                    {isLoading &&
@@ -81,7 +81,7 @@ const Login = () => {
                    }
                    {user?.email && 
                       <Alert variant="success">
-                    Successfully Log In!
+                         This is a  Successfully Log In!
                        </Alert>
                     } 
                 {authError && <Alert variant="danger" >
@@ -91,7 +91,7 @@ const Login = () => {
                  <p>-----------------------------------</p> 
                  <Button onClick={handleGoogleSignIn} 
                         style={{ textDecoration: "none"}}
-                        variant="warning">Google Sign In</Button>   
+                        variant="success">Google Sign In</Button>   
          </Col>
                <Col>
                  <img style={{width:'100%'}} src='https://images.unsplash.com/photo-1568054043324-86c349f926d0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGpld2Vscnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt="" />
@@ -99,7 +99,7 @@ const Login = () => {
         
         
         </Row>
-       </Container>
+     
     );
 };
 
