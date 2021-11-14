@@ -8,11 +8,14 @@ import {
   
 } from "react-router-dom";
 import Products from './Pages/Products/Products/Products';
+import Login from './Pages/Login/Login/Login';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Register from './Pages/Login/Register/Register';
 
 function App() {
   return (
     <div className="App">
-   
+   <AuthProvider>
      <Router>
      <Switch>
          <Route exact path="/">
@@ -27,10 +30,20 @@ function App() {
          <Route exact path="/reviews">
                <Products></Products>
            </Route>
+         <Route exact path="/about">
+               <Products></Products>
+           </Route>
+         <Route exact path="/login">
+               <Login></Login>
+           </Route>
+          
+         <Route exact path="/register">
+              <Register></Register>
+           </Route>
           
         </Switch>
      </Router>
-    
+    </AuthProvider>
     </div>
   );
 }

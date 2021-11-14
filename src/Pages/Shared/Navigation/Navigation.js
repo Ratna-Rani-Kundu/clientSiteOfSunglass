@@ -27,6 +27,7 @@ const Navigation = () => {
       <Link className='text-light nav-link p-4' to="/review">Reviews</Link>
       <Link className='text-light nav-link p-4' to="/about">About</Link>
       <Link className='text-light nav-link p-4' to="/addService">Add Service</Link>
+      <Link className='text-light nav-link p-4' to="/login">Log In</Link>
       
       
       
