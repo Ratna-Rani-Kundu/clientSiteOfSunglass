@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Row } from 'react-bootstrap';
-import Navigation from '../../Shared/Navigation/Navigation';
+
 import Product from '../Product/Product';
 
 const products=[
@@ -104,7 +104,7 @@ const products=[
 const Products = () => {
     return (
         <div className="mt-4">
-            <Navigation></Navigation>
+            
           
              <Row xs={1} sm={2} md={3} lg={3}className="g-4">
              {

@@ -24,8 +24,9 @@ const{user,logout}=useAuth()
     <Link className='text-light nav-link p-4 ' to="/home">Home</Link>
     
       <Link className='text-light nav-link p-4' to="/products">Products</Link>
+      <Link className='text-light nav-link p-4' to="/explore">Explore</Link>
       
-      <Link className='text-light nav-link p-4' to="/review">Reviews</Link>
+      
       <Link className='text-light nav-link p-4' to="/about">About</Link>
       <Link className='text-light nav-link p-4' to="/addService">Add Service</Link>
      

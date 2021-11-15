@@ -12,7 +12,7 @@ const ProductDetails = () => {
          fetch(url)
          .then(res=>res.json())
          .then(data=>setProduct(data))
-     },[])
+     },[id])
 
     //  const handleEmailChange=(e)=>{
     //     const updatedEmail=e.target.value;
