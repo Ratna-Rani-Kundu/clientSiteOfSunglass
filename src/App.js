@@ -12,7 +12,7 @@ import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Register from './Pages/Login/Register/Register';
 import ProductDetails from './Pages/Products/ProductDetails/ProductDetails';
-// import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -33,9 +33,9 @@ function App() {
          <Route exact path="/products/:id">
                <ProductDetails></ProductDetails>
            </Route>
-         <Route exact path="/review">
+         <PrivateRoute exact path="/review">
                <Products></Products>
-           </Route>
+           </PrivateRoute>
          <Route exact path="/about">
                <Products></Products>
            </Route>

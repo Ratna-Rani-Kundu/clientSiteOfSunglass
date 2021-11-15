@@ -10,7 +10,7 @@ const Product = ({product}) => {
 
     <Col>
       <Card>
-        <Card.Img variant="top" style={{width: '22rem' ,height: '20rem'}} src={img} />
+        <Card.Img variant="top" style={{ height: '20rem'}} src={img} />
         <Card.Body>
           <Card.Title>
             <h2>{name}</h2>
