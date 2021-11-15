@@ -11,6 +11,7 @@ import Products from './Pages/Products/Products/Products';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Register from './Pages/Login/Register/Register';
+import ProductDetails from './Pages/Products/ProductDetails/ProductDetails';
 // import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
@@ -25,8 +26,12 @@ function App() {
          <Route exact path="/home">
                <Home />
            </Route>
+           {/* /products/${id}` */}
          <Route exact path="/products">
                <Products></Products>
+           </Route>
+         <Route exact path="/products/:id">
+               <ProductDetails></ProductDetails>
            </Route>
          <Route exact path="/review">
                <Products></Products>
