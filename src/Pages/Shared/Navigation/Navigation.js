@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
  
 const Navigation = () => {
-  
+
     return (
       
   <Navbar className="" collapseOnSelect expand="lg"  sticky="top" bg="dark" variant="dark">
@@ -33,7 +33,7 @@ const Navigation = () => {
       
     </Nav>
   </Navbar.Collapse>
-  {/* <Navbar.Collapse className="justify-content-end">
+   {/* <Navbar.Collapse className="justify-content-end">
       <Navbar.Text>
          {!user?.displayName? <Link to='/login'>  <Button onClick={signInUsingGoogle}>Sign In</Button></Link> : <div>Signed in as: {user?.displayName} <Button onClick={logout}>Log out</Button></div>
          }

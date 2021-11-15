@@ -23,7 +23,7 @@ const Product = ({product}) => {
         </Card.Body>
         <Card.Footer>
          
-       <Link to={`/products/${id}`}><Button variant="primary">Purchase</Button></Link>
+        <Link to={`/products/${id}`}><Button variant="primary">Purchase</Button></Link>
     </Card.Footer>
       </Card>
     </Col>
