@@ -3,13 +3,13 @@ import { Card, Col, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-const Product = ({product}) => {
-    const {img,name,description,id,price}=product
+const Trend = ({trend}) => {
+    const {img,name,description,id,price}=trend
     return (
         <>
             
 
-    <Col>
+            <Col>
       <Card>
         <Card.Img variant="top" style={{ height: '20rem'}} src={img} />
         <Card.Body>
@@ -31,4 +31,4 @@ const Product = ({product}) => {
     );
 };
 
-export default Product;
+export default Trend;

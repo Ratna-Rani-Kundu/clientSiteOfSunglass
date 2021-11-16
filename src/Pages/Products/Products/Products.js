@@ -3,6 +3,7 @@ import {  Row } from 'react-bootstrap';
 
 import Product from '../Product/Product';
 
+
 const products=[
     {
         id:1,
@@ -103,17 +104,18 @@ const products=[
 ]
 const Products = () => {
     return (
-        <div className="mt-4">
+        <div className="m-4 container">
             
           
              <Row xs={1} sm={2} md={3} lg={3}className="g-4">
              {
                products.map(product=><Product
                 key={product.id}
-                product={product}></Product>)
+                product={product}></Product>
+                )
             }
              </Row>
-           
+             
              </div>
     );
 };

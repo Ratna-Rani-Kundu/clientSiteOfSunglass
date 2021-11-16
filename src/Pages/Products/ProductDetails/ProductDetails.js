@@ -1,14 +1,18 @@
 import React,{ useEffect, useState }  from 'react';
-import { Container } from 'react-bootstrap';
+import {  Modal,Button } from 'react-bootstrap';
 // import { FloatingLabel, Form } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
 
 const ProductDetails = () => {
+ 
+  const {user}=useAuth()
+  
      const [product,setProduct]=useState({}) //single product is a object
 
      const {id}=useParams() //getting the id of single product info
      useEffect(()=>{
-         const url=`https://jsonplaceholder.typicode.com/users/${id}`  //server
+         const url=`https://jsonplaceholder.typicode.com/users${id}`  //server
          fetch(url)
          .then(res=>res.json())
          .then(data=>setProduct(data))
@@ -23,33 +27,49 @@ const ProductDetails = () => {
 
 
     //  const handleSubmit=(e)=>{
-        // akhane put method hbe
-        // const url=`https://jsonplaceholder.typicode.com/users/${id}`  //server
-        //  fetch(url)
-        //  .then(res=>res.json())
-        //  .then(data=>setProduct(data))
+    //     // akhane put method hbe
+    //     const url=`https://jsonplaceholder.typicode.com/users/${id}`  //server
+    //      fetch(url)
+    //      .then(res=>res.json())
+    //      .then(data=>setProduct(data))
   
     //       e.preventDefault()
     //  }
     return (
-       <Container>
-            <form  className="w-50 mt-4 ">
-        <div class="form-group align-center">
-          <label for="exampleInputEmail1">Email address</label>  
-         
-          <input type="email"  value={product?.email} class="form-control mt-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-        
-          <small id="emailHelp" class="form-text  mt-2">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input  type="password" class="form-control mt-4" id="exampleInputPassword1" value={product.name} placeholder="Password"/>
-        </div>
-      
-          
-        <button  type="submit" class="btn btn-primary mt-4">Submit</button>
-      </form>
-       </Container>
+     
+         <Modal.Dialog className="mt-4" >
+  <Modal.Header>
+    <Modal.Title >Nme</Modal.Title>
+  </Modal.Header>
+
+  <Modal.Body>
+  <form  className=" mt-4 ">    
+  <div className="form-row">
+    <div className="col">
+      <input type="text"className="form-control mt-2"  defaultValue={id}   placeholder="Name" />
+    </div>
+    <div>
+      <input type="email" className="form-control mt-2" defaultValue={user?.email}  placeholder="Enter email"/>
+    </div>
+    <div className="col">
+      <input type="text" className="form-control mt-2" defaultValue={product?.website}   placeholder="Address"/>
+    </div>
+    <div className="col">
+      <input type="text" className="form-control mt-2" placeholder="Post Office"  />
+    </div>
+    <div className="col">
+      <input type="number" className="form-control mt-2" placeholder="Phone Number" />
+    </div> 
+  </div>
+  </form> 
+  </Modal.Body>
+
+  <Modal.Footer>
+    <Button variant="secondary">Close</Button>
+    <Button  type="submit" variant="primary">Purchase</Button>
+  </Modal.Footer>
+</Modal.Dialog>
+  
     );
 };
 

@@ -8,8 +8,8 @@ const useFirebase = () => {
     const[authError,setAuthError] =useState('')
 
     const auth = getAuth();
-    const googleProvider = new GoogleAuthProvider();
-    
+     const googleProvider = new GoogleAuthProvider();
+     
     
     const registerUser=(email,password,name,history)=>{
        setIsLoading(true)

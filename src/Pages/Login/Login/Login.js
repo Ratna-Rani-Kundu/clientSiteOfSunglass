@@ -7,7 +7,6 @@ import useAuth from '../../../hooks/useAuth'
 import { NavLink,useLocation,useHistory,} from 'react-router-dom';
 import { Button, Form, Spinner, Row,Col,Alert } from 'react-bootstrap';
 
-
 const Login = () => {
   const [loginData,setLoginData,]=useState({})
   const {loginUser,signInWithGoogle,user,authError,isLoading}=useAuth()
@@ -40,6 +39,14 @@ const Login = () => {
             <form onSubmit={handleLoginSubmit} >
              <Form.Group className="mb-3" >
           
+               <Form.Control
+               className=" mb-2"
+            
+                 name="name"
+                onChange={handleOnChange}
+                placeholder="User Name"
+                type="text" 
+              />
                <Form.Control
                className=" mb-2"
             
@@ -89,9 +96,9 @@ const Login = () => {
                      </Alert>}
            </form>
                  <p>-----------------------------------</p> 
-                 <Button onClick={handleGoogleSignIn} 
+                  <Button onClick={handleGoogleSignIn} 
                         style={{ textDecoration: "none"}}
-                        variant="success">Google Sign In</Button>   
+                        variant="success">Google Sign In</Button>  
          </Col>
                <Col>
                  <img style={{width:'100%'}} src='https://images.unsplash.com/photo-1568054043324-86c349f926d0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGpld2Vscnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt="" />

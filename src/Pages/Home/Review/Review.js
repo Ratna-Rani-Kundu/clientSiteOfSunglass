@@ -1,34 +1,29 @@
-import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import reviews from "../../../image/reviewers/reviwer-1.png"
-const Review = () => {
-    return (
-        <div  className="mt-4">
-            <h1 className="text-warning">Happy Client Says</h1>
-            <hr/>
-         <Container>
-         <Row xs={1} sm={2} md={3} lg={5}className="g-4">
-            
-            <Col>
-      <Card>
-        <Card.Img variant="top" style={{ }} src={reviews} />
-        <Card.Body>
-          <Card.Title>
-          Awesome Ring
-             </Card.Title>
-          <Card.Text>
-          Beautiful Diamond Jewelry, Engagement Rings  More. Shop in Store Today! Continental Diamond: Best Jewelers in Minneapolis, MN. 4.9 on Google Reviews. MN Bride Best Jeweler. 4.9 on Wedding Wire. Jewelers Since 1981. Top Brands. Styles: Princess, Cushion, Marquise, Asscher, Radiant, Pear, Emerald, Heart, Oval.
-          
-          </Card.Text>
-         
-        </Card.Body>
-        
-      </Card>
-    </Col>
-             </Row>
-         </Container>
-        </div>
-    );
-};
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
-export default Review;
+// import Avatar from '@mui/material/Avatar';
+// import Typography from '@mui/material/Typography';
+
+// const message = `Truncation should be conditionally applicable on this long line of text
+//  as this is a much longer line than what the container can support. `;
+
+export default function Review() {
+  return (
+    <Box
+    sx={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      '& > :not(style)': {
+        m: 1,
+        width: 128,
+        height: 128,
+      },
+    }}
+  >
+    <Paper elevation={0} />
+    <Paper />
+    <Paper elevation={3} />
+  </Box>
+  );
+}

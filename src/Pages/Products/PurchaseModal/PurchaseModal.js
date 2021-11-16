@@ -1,42 +1,34 @@
-import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
-
+import React from 'react';
+import "./PurchaseModal.css"
 const PurchaseModal = () => {
+  const modal = document.getElementById('id01');
 
-    const [show, setShow] = useState(false);
-  
-    return (
-      <>
-        <Button variant="primary" onClick={() => setShow(true)}>
-          Custom Width Modal
-        </Button>
-  
-        <Modal
-          show={show}
-          onHide={() => setShow(false)}
-          dialogClassName="modal-90w"
-          aria-labelledby="example-custom-modal-styling-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="example-custom-modal-styling-title">
-              Custom Modal Styling
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>
-              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde
-              commodi aspernatur enim, consectetur. Cumque deleniti temporibus
-              ipsam atque a dolores quisquam quisquam adipisci possimus
-              laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod
-              accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia
-              reiciendis porro quo magni incidunt dolore amet atque facilis ipsum
-              deleniti rem!
-            </p>
-          </Modal.Body>
-        </Modal>
-      </>
-    );
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
   }
+}
+  return (
+    <div>
+      <button onclick="document.getElementById('id01').style.display='block'">Open Modal</button>
 
-  
-  export default PurchaseModal;
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Delete Account</h1>
+      <p>Are you sure you want to delete your account?</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
+    </div>
+  );
+};
+
+export default PurchaseModal;

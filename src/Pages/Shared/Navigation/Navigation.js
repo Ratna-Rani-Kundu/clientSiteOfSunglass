@@ -20,22 +20,17 @@ const{user,logout}=useAuth()
     </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-    <Link className='text-light nav-link p-4 ' to="/home">Home</Link>
-    
-      <Link className='text-light nav-link p-4' to="/products">Products</Link>
-      <Link className='text-light nav-link p-4' to="/explore">Explore</Link>
-      
-      
-      <Link className='text-light nav-link p-4' to="/about">About</Link>
-      <Link className='text-light nav-link p-4' to="/addService">Add Service</Link>
-     
-      
-      
-      
-    </Nav>
+  <Nav className="me-auto">
+  <Link className='text-light nav-link p-4 ' to="/home">Home</Link>
+  
+  </Nav>
   </Navbar.Collapse>
    <Navbar.Collapse className="justify-content-end">
+
+   
+  
+    
+      <Link className='text-light nav-link p-4' to="/explore">Explore</Link>
       <Navbar.Text>
          {user?.displayName?  <Button variant="dark" onClick={logout}>Log out</Button>:<Link className='text-light nav-link p-4' to="/login">Log In</Link>
          }
