@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const Product = ({product}) => {
-    const {img,name,description,id,price}=product
+    const {img,name,description,_id,price}=product
     return (
         <>
             
@@ -19,7 +19,7 @@ const Product = ({product}) => {
           <Card.Text>
             {description} 
           <h1> ${price}</h1>
-          <Link className="align-left" to={`/products/${id}`}><Button variant="warning">Purchase</Button></Link>
+          <Link className="align-left" to={`/products/${_id}`}><Button variant="warning">Purchase</Button></Link>
           </Card.Text>
          
         </Card.Body>

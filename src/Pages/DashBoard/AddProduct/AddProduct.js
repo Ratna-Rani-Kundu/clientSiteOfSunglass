@@ -1,23 +1,26 @@
 import React from 'react';
-import "./AddService.css";
+import "./AddProduct.css";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+
+
+
 const AddService = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log(data)
-    axios.post("https://chilling-zombie-19937.herokuapp.com/services",data)
+    axios.post("http://localhost:5000/products",data)
     .then(res=>{
 
       if(res.data.insertedId){
-        alert('successfully added');
+        alert('added successfully')
         reset();
       }
    })
   }
     return (
         <div className="add-service container ">
-            <h1 className="text-center  text-danger mt-4">Please Add a Service</h1>
+            <h1 className="text-center  text-danger mt-4"> Add Product</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
       
                   <input  {...register("name")} required placeholder='Name'/>

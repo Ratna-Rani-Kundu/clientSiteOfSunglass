@@ -12,12 +12,29 @@ const ProductDetails = () => {
 
      const {id}=useParams() //getting the id of single product info
      useEffect(()=>{
-         const url=`https://jsonplaceholder.typicode.com/users${id}`  //server
+         const url=`http://localhost:5000/products/${id}`  //server
          fetch(url)
          .then(res=>res.json())
          .then(data=>setProduct(data))
      },[id])
 
+    //delete product
+    // const handleDelete=(id)=>{
+    //   const url=`http://localhost:5000/products/${id}`
+    
+    //   fetch(url,{
+    //   method:"DELETE"
+    // })
+ 
+    // .then(res=>res.json())
+    // .then(data=>{
+    //   if(data?.deletedCount){
+    //     const remaining=products.filter(product=>product._id !== id)
+    //     setProducts(remaining)
+    //   }
+    // })
+    //  }
+ 
     //  const handleEmailChange=(e)=>{
     //     const updatedEmail=e.target.value;
     //    const updatedProduct={email:email}
@@ -39,7 +56,7 @@ const ProductDetails = () => {
      
          <Modal.Dialog className="mt-4" >
   <Modal.Header>
-    <Modal.Title >Nme</Modal.Title>
+    <Modal.Title >{product?.name}</Modal.Title>
   </Modal.Header>
 
   <Modal.Body>
@@ -65,7 +82,7 @@ const ProductDetails = () => {
   </Modal.Body>
 
   <Modal.Footer>
-    <Button variant="secondary">Close</Button>
+    <Button  variant="secondary">Close</Button>
     <Button  type="submit" variant="primary">Purchase</Button>
   </Modal.Footer>
 </Modal.Dialog>
