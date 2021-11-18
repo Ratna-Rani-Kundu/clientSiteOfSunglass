@@ -20,7 +20,9 @@ import {
 } from "react-router-dom";
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from "../../../hooks/useAuth"
-
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Payment from '../Payment/Payment';
+import AddProduct from "../AddProduct/AddProduct"
 
 
 const drawerWidth = 200;
@@ -40,7 +42,7 @@ function DashBoard(props) {
       <Divider />
       
       {admin? <div>
-         <Link to={`${url}/addproduct`}>   Add A Product</Link><br/>
+         <Link to={`${url}/addProduct`}>   Add A Product</Link><br/>
       <Link to={`${url}/manageProduct`}>Manage Product</Link><br/>
       <Link to={`${url}/makeAdmin`}> Make Admin</Link><br/>
       <Button variant="contained" onClick={logout}>Log Out</Button>
@@ -123,14 +125,20 @@ function DashBoard(props) {
         <Route exact path={path}>
          <MakeAdmin/>
         </Route>
-        <Route path={`${path}/makeAdmin`}>
+        <AdminRoute path={`${path}/makeAdmin`}>
         <MakeAdmin/>
-        </Route>
+        </AdminRoute>
+        <AdminRoute path={`${path}/addProduct`}>
+      <AddProduct/>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manageProduct`}>
+        <MakeAdmin/>
+        </AdminRoute>
         <Route path={`${path}/review`}>
         <MakeAdmin/>
         </Route>
         <Route path={`${path}/pay`}>
-        <MakeAdmin/>
+        <Payment/>
         </Route>
         <Route path={`${path}/myOrder`}>
         <MakeAdmin/>

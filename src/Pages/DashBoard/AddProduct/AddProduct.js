@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-const AddService = () => {
+const AddProduct = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log(data)
@@ -36,4 +36,4 @@ const AddService = () => {
     );
 };
 
-export default AddService;
+export default AddProduct;
