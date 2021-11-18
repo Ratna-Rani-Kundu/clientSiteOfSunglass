@@ -4,6 +4,7 @@ import { NavLink ,useHistory} from 'react-router-dom';
 
 import useAuth from '../../../hooks/useAuth'
 import { Button, Form, Spinner, Row,  Col,Alert } from 'react-bootstrap';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
              const [loginData,setLoginData]=useState({})
@@ -30,10 +31,14 @@ const Register = () => {
            e.preventDefault()
   }
     return (
-   
+        <>
+        <Navigation/>
             <Row >
+               <Col variant="success">
+                     <img style={{width:'100%'}} src='https://images.unsplash.com/photo-1556015048-4d3aa10df74c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c3VuZ2xhc3Nlc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt="" />
+                   </Col> 
               <Col className='p-4' >
-                   <h2>Registration</h2>
+                   <h2  className="text-success">Registration</h2>
                      {!isLoading && 
                      <form onSubmit={handleLoginSubmit}>
                      <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -77,7 +82,8 @@ const Register = () => {
                                <NavLink to="/login">
                                  <Button 
                                      style={{ textDecoration : "none"}}
-                                     variant="text">Already Registered? Please Login
+                                     variant="text"
+                                     className="text-danger">Already Registered? Please Login
                                  </Button>
                                </NavLink>
                       </form>}
@@ -104,11 +110,9 @@ const Register = () => {
                        </Alert>
                     }
            </Col>
-                   <Col variant="success">
-                     <img style={{width:'100%'}} src='https://images.unsplash.com/photo-1568054043324-86c349f926d0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGpld2Vscnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt="" />
-                   </Col> 
+                  
         </Row>
-  
+  </>
     );
 };
 

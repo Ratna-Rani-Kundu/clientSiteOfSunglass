@@ -14,7 +14,7 @@ const Home = () => {
         <div>
             <Navigation/>
             <Banner className="mb-4"/>
-            <h1 className="align-center m-4">Our <span className="text-warning ">Collections</span></h1>
+            <h1 className="align-center m-4">Our <span className="text-info ">Collections</span></h1>
            <Products />
          <Trends/>
            <Review/>

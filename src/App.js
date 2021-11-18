@@ -14,7 +14,7 @@ import Register from './Pages/Login/Register/Register';
 import ProductDetails from './Pages/Products/ProductDetails/ProductDetails';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
-import AddProduct from "./Pages/DashBoard/AddProduct/AddProduct"
+// import AddProduct from "./Pages/DashBoard/AddProduct/AddProduct"
 import ManageProducts from './Pages/DashBoard/ManageProducts/ManageProducts';
 
 
@@ -39,15 +39,15 @@ function App() {
                <ProductDetails></ProductDetails>
            </PrivateRoute>
          
-         <Route exact path="/dashboard">
+         <PrivateRoute  path="/dashboard">
             <DashBoard></DashBoard>
-           </Route>
-         <Route exact path="/explore">
+           </PrivateRoute>
+         <Route path="/explore">
             <ManageProducts/>
            </Route>
-         <Route exact path="/addproduct">
+         {/* <Route exact path="/addproduct">
             <AddProduct></AddProduct>
-           </Route>
+           </Route> */}
            <Route exact path="/login">
                <Login></Login>
            </Route>

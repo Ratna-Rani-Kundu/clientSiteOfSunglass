@@ -23,13 +23,13 @@ const Footer = () => {
                <h3>Support</h3>
                <ul  >
                      <li className='text-dark ' >
-                       <Link style={{textDecoration:'none'}} className='text-light' to="/">Home</Link>
+                       <Link style={{textDecoration:'none'}} className='text-light' to="/home">Home</Link>
                      </li>
                      <li className='text-dark'>
-                       <Link style={{textDecoration:'none'}}  className='text-light' to="/about">About</Link>
+                       <Link style={{textDecoration:'none'}}  className='text-light' to="/explore">Explore</Link>
                      </li>
                      <li className='text-dark'>
-                       <Link style={{textDecoration:'none'}} className='text-light' to="/service">Services</Link>
+                       <Link style={{textDecoration:'none'}} className='text-light' to="/login">Login</Link>
                      </li>
                      </ul>
                </Col>
@@ -43,7 +43,7 @@ const Footer = () => {
       </Container>
 
            <hr />
-           <p className="text-center">Copyright © 2021 jewel-mart.com</p>
+           <p className="text-center">Copyright ©Ratna Rani Kundu 2021 </p>
         </div>
     );
 };
