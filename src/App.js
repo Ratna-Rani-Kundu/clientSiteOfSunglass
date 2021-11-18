@@ -14,7 +14,7 @@ import Register from './Pages/Login/Register/Register';
 import ProductDetails from './Pages/Products/ProductDetails/ProductDetails';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
-// import AddProduct from "./Pages/DashBoard/AddProduct/AddProduct"
+
 import ManageProducts from './Pages/DashBoard/ManageProducts/ManageProducts';
 
 
@@ -32,10 +32,10 @@ function App() {
                <Home />
            </Route>
            {/* /products/${id}` */}
-         <Route  path="/products">
+         <Route  exact path="/products">
                <Products></Products>
            </Route>
-         <PrivateRoute  path="/products/:id">
+         <PrivateRoute path="/products/:id">
                <ProductDetails></ProductDetails>
            </PrivateRoute>
          
