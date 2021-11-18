@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 const MakeAdmin = () => {
     const [email,setEmail]=useState('')
      const [success, setSuccess] = useState(false);
+     
     const handleOnBlur=(e)=>{
 
     setEmail( e.target.value)

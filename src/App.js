@@ -32,10 +32,10 @@ function App() {
                <Home />
            </Route>
            {/* /products/${id}` */}
-         <Route exact path="/products">
+         <Route  path="/products">
                <Products></Products>
            </Route>
-         <PrivateRoute exact path="/products/:id">
+         <PrivateRoute  path="/products/:id">
                <ProductDetails></ProductDetails>
            </PrivateRoute>
          

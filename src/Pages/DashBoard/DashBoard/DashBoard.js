@@ -6,16 +6,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import Button from '@mui/material/Button';
 import {
   
   Switch,
@@ -25,7 +19,7 @@ import {
   useRouteMatch
 } from "react-router-dom";
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
-
+import useAuth from "../../../hooks/useAuth"
 
 
 
@@ -34,7 +28,7 @@ const drawerWidth = 200;
 function DashBoard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const {admin,logout}=useAuth()
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -44,20 +38,18 @@ function DashBoard(props) {
     <div>
       <Toolbar />
       <Divider />
-      <Link  to={`${url}`}>Dashboard</Link><br/>
-      <Link to={`${url}/addproduct`}>   Add A Product</Link><br/>
+      
+      {admin? <div>
+         <Link to={`${url}/addproduct`}>   Add A Product</Link><br/>
       <Link to={`${url}/manageProduct`}>Manage Product</Link><br/>
-      <Link to={`${url}/makeAdmin`}>Make Admin</Link>
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={`${url}/makeAdmin`}> Make Admin</Link><br/>
+      <Button variant="contained" onClick={logout}>Log Out</Button>
+      </div>: <div>
+    <Link to={`${url}/pay`}>   Pay</Link><br/>
+      <Link to={`${url}/myOrder`}>My Order</Link><br/>
+      <Link to={`${url}/review`}> Review</Link><br/>
+      <Button variant="contained" onClick={logout}>Log Out</Button>
+      </div> }
      
     </div>
   );
@@ -132,6 +124,15 @@ function DashBoard(props) {
          <MakeAdmin/>
         </Route>
         <Route path={`${path}/makeAdmin`}>
+        <MakeAdmin/>
+        </Route>
+        <Route path={`${path}/review`}>
+        <MakeAdmin/>
+        </Route>
+        <Route path={`${path}/pay`}>
+        <MakeAdmin/>
+        </Route>
+        <Route path={`${path}/myOrder`}>
         <MakeAdmin/>
         </Route>
         {/* <Route path={`${path}/addproduct`}>
