@@ -1,7 +1,7 @@
 import {  Alert, TextField } from '@mui/material';
 import React, {  useState } from 'react';
 import Button from '@mui/material/Button';
-
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 const MakeAdmin = () => {
     const [email,setEmail]=useState('')
      const [success, setSuccess] = useState(false);
@@ -37,7 +37,7 @@ const MakeAdmin = () => {
             <h1>Make a admin</h1>
         <form onSubmit={handleAdminSubmit}>
         <TextField onBlur={handleOnBlur}  label="Email" type="email" variant="standard" />
-        <Button type="submit" variant="contained">Make Admin</Button>
+        <Button type="submit" variant="contained"><AdminPanelSettingsIcon/> Make Admin</Button>
         </form>
          {success && <Alert severity="success">Make Admin Successfully</Alert>} 
         </div>

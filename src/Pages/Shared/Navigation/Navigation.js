@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar,Container, Nav, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
  
 const Navigation = () => {
@@ -33,7 +33,7 @@ const{user,logout}=useAuth()
          <div className="d-flex">
            <Link className='text-light nav-link p-4' to="/dashboard"><Button variant="dark">Dashboard</Button></Link>
           
-          <Button variant="dark">{user?.displayName}</Button>
+          <Button variant="dark"><AccountCircleIcon/>{user?.displayName}</Button>
           <Button variant="dark" onClick={logout}>Log out</Button>
          </div>:
          <Link className='text-light nav-link p-4' to="/login">Log In </Link>

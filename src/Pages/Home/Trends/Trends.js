@@ -37,7 +37,7 @@ const trendyCollections=[ {
 const Trends = () => {
     return (
         <div>
-           <h1 className="align-center m-4">Shopping on the <span className="text-warning ">Trend</span></h1>  
+           <h1 className="align-center m-4"> <span className="text-info ">Trendy Collections</span></h1>  
            <Row xs={1} sm={2} md={3} lg={3}className="g-4">
            {trendyCollections.map(trend=><Trend
            key={trend.id}

@@ -23,8 +23,13 @@ import useAuth from "../../../hooks/useAuth"
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import Payment from '../Payment/Payment';
 import AddProduct from "../AddProduct/AddProduct"
-
-
+import Review from '../../Home/Review/Review';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import AccountBalanceWalletTwoToneIcon from '@mui/icons-material/AccountBalanceWalletTwoTone';
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
+import PaymentIcon from '@mui/icons-material/Payment';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 const drawerWidth = 200;
 
 function DashBoard(props) {
@@ -42,14 +47,15 @@ function DashBoard(props) {
       <Divider />
       
       {admin? <div>
-         <Link to={`${url}/addProduct`}>   Add A Product</Link><br/>
-      <Link to={`${url}/manageProduct`}>Manage Product</Link><br/>
-      <Link to={`${url}/makeAdmin`}> Make Admin</Link><br/>
+         <Link style={{textDecoration:'none'}} to={`${url}/addProduct`}>  <Button variant="text"><AddCircleOutlinedIcon/>Add A Product</Button> </Link><br/>
+      <Link style={{textDecoration:'none'}}    to={`${url}/manageProduct`}><Button variant="text"><AccountBalanceWalletTwoToneIcon/>Manage Product</Button></Link><br/>
+      <Link style={{textDecoration:'none'}}    to={`${url}/manageAllProduct`}><Button variant="text"><AccountBalanceWalletTwoToneIcon/>Manage All Product</Button></Link><br/>
+      <Link style={{textDecoration:'none'}}    to={`${url}/makeAdmin`}><Button variant="text"><AdminPanelSettingsIcon/>Make Admin</Button> </Link><br/>
       <Button variant="contained" onClick={logout}>Log Out</Button>
       </div>: <div>
-    <Link to={`${url}/pay`}>   Pay</Link><br/>
-      <Link to={`${url}/myOrder`}>My Order</Link><br/>
-      <Link to={`${url}/review`}> Review</Link><br/>
+      <Link style={{textDecoration:'none'}} to={`${url}/pay`}>         <Button variant="text"><PaymentIcon/>Payment </Button> </Link><br/>
+      <Link style={{textDecoration:'none'}} to={`${url}/myOrder`}> <Button variant="text"><AddShoppingCartIcon/> My Order</Button> </Link><br/>
+      <Link style={{textDecoration:'none'}} to={`${url}/review`}>   <Button variant="text"></Button><ReviewsIcon/> Review</Link><br/>
       <Button variant="contained" onClick={logout}>Log Out</Button>
       </div> }
      
@@ -134,8 +140,11 @@ function DashBoard(props) {
         <AdminRoute path={`${path}/manageProduct`}>
         <MakeAdmin/>
         </AdminRoute>
-        <Route path={`${path}/review`}>
+        <AdminRoute path={`${path}/manageAllProduct`}>
         <MakeAdmin/>
+        </AdminRoute>
+        <Route path={`${path}/review`}>
+       <Review/>
         </Route>
         <Route path={`${path}/pay`}>
         <Payment/>
