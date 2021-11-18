@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 const Product = ({product}) => {
     const {img,name,description,_id,price}=product
     return (
-        <>
+        <div classname="sunglass">
             
 
-    <Col>
-      <Card>
+    <Col >
+      <Card >
         <Card.Img variant="top" style={{ height: '20rem'}} src={img} />
         <Card.Body>
           <Card.Title>
@@ -27,7 +27,7 @@ const Product = ({product}) => {
       </Card>
     </Col>
     
-        </>
+        </div>
     );
 };
 

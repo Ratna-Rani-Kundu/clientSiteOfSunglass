@@ -2,6 +2,7 @@ import React,{ useEffect, useState }  from 'react';
 import {  Modal,Button } from 'react-bootstrap';
 // import { FloatingLabel, Form } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const ProductDetails = () => {
@@ -111,7 +112,7 @@ console.log(purchase)
   </Modal.Body>
 
   <Modal.Footer>
-    <Button  variant="secondary">Close</Button>
+    <Link to="/"><Button  variant="secondary">Close</Button></Link>
     
   </Modal.Footer>
 </Modal.Dialog>

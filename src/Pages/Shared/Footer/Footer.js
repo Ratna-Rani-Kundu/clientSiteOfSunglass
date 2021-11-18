@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 const Footer = () => {
     return (
 
@@ -15,15 +18,15 @@ const Footer = () => {
                 </Col>
                <Col>
                <h3>Contact Us</h3>
-               <p>Location : 21 Shyamoli, Mirpur Road, Dhaka-1207, Bangladesh</p>
-                      <p>Phone : 10633, +8809666700100</p>
-                      <p> Email:   info.jewelmart@gmail.com</p>
+               <p> <RoomOutlinedIcon/>21 Shyamoli, Mirpur Road, Dhaka-1207, Bangladesh</p>
+                      <p> <PhoneOutlinedIcon/>  10633, +8809666700100</p>
+                      <p><EmailOutlinedIcon/>   info.jewelmart@gmail.com</p>
                </Col>
                <Col>
                <h3>Support</h3>
                <ul  >
                      <li className='text-dark ' >
-                       <Link style={{textDecoration:'none'}} className='text-light' to="/home">Home</Link>
+                       <Link style={{textDecoration:'none'}} className='text-light' to="/home"><HomeOutlinedIcon/>Home</Link>
                      </li>
                      <li className='text-dark'>
                        <Link style={{textDecoration:'none'}}  className='text-light' to="/explore">Explore</Link>
