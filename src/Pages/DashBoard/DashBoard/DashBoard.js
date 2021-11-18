@@ -30,6 +30,8 @@ import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import PaymentIcon from '@mui/icons-material/Payment';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ReviewsIcon from '@mui/icons-material/Reviews';
+import ManageProducts from '../ManageProducts/ManageProducts';
+
 const drawerWidth = 200;
 
 function DashBoard(props) {
@@ -49,7 +51,7 @@ function DashBoard(props) {
       {admin? <div>
          <Link style={{textDecoration:'none'}} to={`${url}/addProduct`}>  <Button variant="text"><AddCircleOutlinedIcon/>Add A Product</Button> </Link><br/>
       <Link style={{textDecoration:'none'}}    to={`${url}/manageProduct`}><Button variant="text"><AccountBalanceWalletTwoToneIcon/>Manage Product</Button></Link><br/>
-      <Link style={{textDecoration:'none'}}    to={`${url}/manageAllProduct`}><Button variant="text"><AccountBalanceWalletTwoToneIcon/>Manage All Product</Button></Link><br/>
+      <Link style={{textDecoration:'none'}}    to={`${url}/manageAllOrders`}><Button variant="text"><AccountBalanceWalletTwoToneIcon/>Manage All Orders</Button></Link><br/>
       <Link style={{textDecoration:'none'}}    to={`${url}/makeAdmin`}><Button variant="text"><AdminPanelSettingsIcon/>Make Admin</Button> </Link><br/>
       <Button variant="contained" onClick={logout}>Log Out</Button>
       </div>: <div>
@@ -138,9 +140,9 @@ function DashBoard(props) {
       <AddProduct/>
         </AdminRoute>
         <AdminRoute path={`${path}/manageProduct`}>
-        <MakeAdmin/>
+       <ManageProducts/>
         </AdminRoute>
-        <AdminRoute path={`${path}/manageAllProduct`}>
+        <AdminRoute path={`${path}/manageAllOrders`}>
         <MakeAdmin/>
         </AdminRoute>
         <Route path={`${path}/review`}>
@@ -152,12 +154,7 @@ function DashBoard(props) {
         <Route path={`${path}/myOrder`}>
         <MakeAdmin/>
         </Route>
-        {/* <Route path={`${path}/addproduct`}>
-        <MakeAdmin/>
-        </Route>
-        <Route path={`${path}/manageProduct`}>
-        <MakeAdmin/> */}
-        {/* </Route> */}
+        
       </Switch>
         
       </Box>
