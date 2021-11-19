@@ -15,9 +15,9 @@ import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 
-import ManageProducts from './Pages/DashBoard/ManageProducts/ManageProducts';
 
 import Purchase from './Pages/Products/Purchase/Purchase';
+import Explore from './Pages/Explore/Explore';
 
 
 
@@ -45,7 +45,7 @@ function App() {
             <DashBoard></DashBoard>
            </PrivateRoute>
          <Route path="/explore">
-            <ManageProducts/>
+           <Explore/>
            </Route>
         
            <Route exact path="/login">
