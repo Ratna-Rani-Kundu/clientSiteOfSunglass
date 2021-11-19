@@ -10,7 +10,7 @@ const Review = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log(data)
-    axios.post("http://localhost:5000/reviews",data)
+    axios.post("https://murmuring-lowlands-25266.herokuapp.com/reviews",data)
     .then(res=>{
 
       if(res.data.insertedId){

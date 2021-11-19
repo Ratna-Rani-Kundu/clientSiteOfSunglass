@@ -16,7 +16,7 @@ const ProductDetails = () => {
      
      const {id}=useParams() //getting the id of single product info
      useEffect(()=>{
-         const url=`http://localhost:5000/products/${id}`  //server
+         const url=`https://murmuring-lowlands-25266.herokuapp.com/products/${id}`  //server
          fetch(url)
          .then(res=>res.json())
          .then(data=>setProduct(data))
@@ -50,7 +50,7 @@ console.log(purchase)
      <>
      
      {/* useEffect(()=>{
-        const url=`http://localhost:5000/products/${id}`  //server
+        const url=`https://murmuring-lowlands-25266.herokuapp.com/products/${id}`  //server
         fetch(url)
         .then(res=>res.json())
        .then(data=> {

@@ -9,7 +9,7 @@ const AddProduct = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log(data)
-    axios.post("http://localhost:5000/products",data)
+    axios.post("https://murmuring-lowlands-25266.herokuapp.com/products",data)
     .then(res=>{
 
       if(res.data.insertedId){

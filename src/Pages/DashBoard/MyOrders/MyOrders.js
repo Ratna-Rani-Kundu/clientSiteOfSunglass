@@ -5,13 +5,13 @@ const MyOrders = () => {
     const [orders,setOrders]=useState([])
     const{user}=useAuth()
     useEffect(()=>{
-        const url=`http://localhost:5000/orders?email=${user?.email}`
+        const url=`https://murmuring-lowlands-25266.herokuapp.com/orders?email=${user?.email}`
      fetch(url)
      .then(res=>res.json())
      .then(data=>setOrders(data))
     },[user?.email])
     const handleDelete=id=>{
-        const url='http://localhost:5000/orders'
+        const url='https://murmuring-lowlands-25266.herokuapp.com/orders'
         fetch(url,{
           method:"DELETE"
         })
