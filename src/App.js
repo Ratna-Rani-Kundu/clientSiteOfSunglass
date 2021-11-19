@@ -11,11 +11,12 @@ import Products from './Pages/Products/Products/Products';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Register from './Pages/Login/Register/Register';
-import ProductDetails from './Pages/Products/ProductDetails/ProductDetails';
+// import ProductDetails from './Pages/Products/ProductDetails/ProductDetails';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 
 import ManageProducts from './Pages/DashBoard/ManageProducts/ManageProducts';
+import Booking from './Pages/Products/Booking/Booking';
 
 
 
@@ -31,12 +32,12 @@ function App() {
          <Route exact path="/home">
                <Home />
            </Route>
-           {/* /products/${id}` */}
+       
          <Route  exact path="/products">
                <Products></Products>
            </Route>
          <PrivateRoute path="/products/:id">
-               <ProductDetails></ProductDetails>
+               <Booking/>
            </PrivateRoute>
          
          <PrivateRoute  path="/dashboard">
@@ -45,9 +46,7 @@ function App() {
          <Route path="/explore">
             <ManageProducts/>
            </Route>
-         {/* <Route exact path="/addproduct">
-            <AddProduct></AddProduct>
-           </Route> */}
+        
            <Route exact path="/login">
                <Login></Login>
            </Route>

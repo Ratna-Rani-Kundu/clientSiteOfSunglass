@@ -48,39 +48,6 @@ console.log(purchase)
     return (
     
      <>
-     
-     {/* useEffect(()=>{
-        const url=`http://localhost:5000/products/${id}`  //server
-        fetch(url)
-        .then(res=>res.json())
-       .then(data=> {
-        axios.post(url,data)
-        .then(res=>{
-    
-          if(res.data.insertedId){
-            alert('added successfully')
-            reset();
-          }
-    
-    })
-    },[id]) */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
      <div >
        <h1>{product?.name}</h1>
@@ -96,7 +63,7 @@ console.log(purchase)
 
   <Modal.Body>
     
-  <form  className=" mt-4 ">    
+  <form onSubmit={ handlePurchaseSubmit} className=" mt-4 ">    
 
   <input name="displayName" onBlur={handleOnBlur}   type="text" className="form-control mt-2" defaultValue={user?.displayName}  placeholder="User Name"/>
       <input  name="email" onBlur={handleOnBlur}  type="email" className="form-control mt-2" defaultValue={user?.email}  placeholder="Enter email"  />
