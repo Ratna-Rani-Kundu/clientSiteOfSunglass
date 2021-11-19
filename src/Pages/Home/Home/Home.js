@@ -21,7 +21,7 @@ const Home = () => {
          <ChooseUs/>
          <h1 className="align-center m-4">Happy Client <span className="text-info ">Says</span></h1>
            <DisplayReview/>
-            
+           
             <Footer/>
         </div>
     );

@@ -43,40 +43,6 @@ const ProductDetails = () => {
       }
 console.log(purchase)
     }
-    //delete product
-    // const handleDelete=(id)=>{
-    //   const url=`http://localhost:5000/products/${id}`
-    
-    //   fetch(url,{
-    //   method:"DELETE"
-    // })
- 
-    // .then(res=>res.json())
-    // .then(data=>{
-    //   if(data?.deletedCount){
-    //     const remaining=products.filter(product=>product._id !== id)
-    //     setProducts(remaining)
-    //   }
-    // })
-    //  }
- 
-    //  const handleEmailChange=(e)=>{
-    //     const updatedEmail=e.target.value;
-    //    const updatedProduct={email:email}
-    //    setProduct(updatedProduct)
-    //   e.preventDefault()
-    //  }
-
-
-    //  const handleSubmit=(e)=>{
-    //     // akhane put method hbe
-    //     const url=`https://jsonplaceholder.typicode.com/users/${id}`  //server
-    //      fetch(url)
-    //      .then(res=>res.json())
-    //      .then(data=>setProduct(data))
-  
-    //       e.preventDefault()
-    //  }
     
     return (
     
