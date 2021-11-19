@@ -16,7 +16,8 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 
 import ManageProducts from './Pages/DashBoard/ManageProducts/ManageProducts';
-import Booking from './Pages/Products/Booking/Booking';
+
+import Purchase from './Pages/Products/Purchase/Purchase';
 
 
 
@@ -37,7 +38,7 @@ function App() {
                <Products></Products>
            </Route>
          <PrivateRoute path="/products/:id">
-               <Booking/>
+            <Purchase/>
            </PrivateRoute>
          
          <PrivateRoute  path="/dashboard">

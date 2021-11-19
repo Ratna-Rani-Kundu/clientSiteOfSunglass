@@ -1,11 +1,11 @@
 import React,{ useEffect, useState }  from 'react';
-import {  Modal,Button } from 'react-bootstrap';
-// import { FloatingLabel, Form } from 'react-bootstrap';
+import {  Row,Col,Button } from 'react-bootstrap';
+
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
+
 import useAuth from '../../../hooks/useAuth';
-// import TextField from '@mui/material/TextField';
+
 const ProductDetails = () => {
  
  
@@ -21,24 +21,18 @@ const ProductDetails = () => {
          .then(res=>res.json())
          .then(data=>setProduct(data))
      },[id])
-     const initialInfo={ 
-      quantity:'',address:'',phone:''}
      
-     const [purchaseInfo,setPurchaseInfo]=useState(initialInfo)
-     console.log(purchaseInfo)
+
     const handleOnBlur=(e)=>{
      const field= e.target.name
      const value= e.target.value
-     const newInfo={...purchaseInfo}
-     newInfo[field]=value
-      console.log(newInfo)
-     setPurchaseInfo(newInfo)
+     
       e.preventDefault()
     }
-    const handlePurchaseSubmit=()=>{
+    const handlePurchaseSubmit=(id)=>{
       //data collection
       const purchase={
-        ...purchaseInfo
+        
         
 
       }
@@ -47,44 +41,37 @@ console.log(purchase)
     
     return (
     
-     <>
-
-     <div >
-       <h1>{product?.name}</h1>
-      <img className=" img-fluid"  src={product?.img} alt="" />
+     <Row>
+       <Col>
+      <img className=" img-fluid w-50"  src={product?.img} alt="" /></Col>
+     <Col >
       
+     <form onSubmit={} className=" mt-4 ">    
+
+<input name="productName" onBlur={handleOnBlur}   type="text" className="form-control mt-2" defaultValue={product?.name}  placeholder="product name"/>
+<input name="displayName" onBlur={handleOnBlur}   type="text" className="form-control mt-2" defaultValue={user?.displayName}  placeholder="User Name"/>
+    <input  name="email" onBlur={handleOnBlur}  type="email" className="form-control mt-2" defaultValue={user?.email}  placeholder="Enter email"  />
+    <input onBlur={handleOnBlur} name="quantity" type="number"className="form-control mt-2"  defaultValue="1"   placeholder="quantity" />
+  
+
+    <input  onBlur={handleOnBlur} name="address" type="text" className="form-control mt-2"    placeholder="Address"/>
+
+  
+    <input  onBlur={handleOnBlur}  name="phone"type="number" className="form-control mt-2" placeholder="Phone Number" />
+    <Button onClick={()=>handlePurchaseSubmit(id)} className=" mt-2"  type="submit" variant="primary">Purchase</Button>
+
+</form> 
+
+  <Link to="/"><Button  variant="secondary">Close</Button></Link>
      
 
-    </div>
-         <Modal.Dialog className="mt-4"  >
-  <Modal.Header>
-    <Modal.Title > <h3>Price: ${product?.price}</h3></Modal.Title>
-  </Modal.Header>
-
-  <Modal.Body>
+    </Col>
+      
     
-  <form onSubmit={ handlePurchaseSubmit} className=" mt-4 ">    
-
-  <input name="displayName" onBlur={handleOnBlur}   type="text" className="form-control mt-2" defaultValue={user?.displayName}  placeholder="User Name"/>
-      <input  name="email" onBlur={handleOnBlur}  type="email" className="form-control mt-2" defaultValue={user?.email}  placeholder="Enter email"  />
-      <input onBlur={handleOnBlur} name="quantity" type="number"className="form-control mt-2"  defaultValue="1"   placeholder="quantity" />
-    
-  
-      <input  onBlur={handleOnBlur} name="address" type="text" className="form-control mt-2"    placeholder="Address"/>
-
-    
-      <input  onBlur={handleOnBlur}  name="phone"type="number" className="form-control mt-2" placeholder="Phone Number" />
-      <Button onClick={()=>handlePurchaseSubmit} className=" mt-2"  type="submit" variant="primary">Purchase</Button>
  
-  </form> 
-  </Modal.Body>
-
-  <Modal.Footer>
-    <Link to="/"><Button  variant="secondary">Close</Button></Link>
     
-  </Modal.Footer>
-</Modal.Dialog> 
-     </>
+ 
+     </Row>
     
   
     );

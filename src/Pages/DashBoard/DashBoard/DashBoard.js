@@ -31,6 +31,8 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import MyOrders from '../MyOrders/MyOrders';
+
 
 const drawerWidth = 200;
 
@@ -130,9 +132,7 @@ function DashBoard(props) {
       >
         <Toolbar />
         <Switch>
-        <Route exact path={path}>
-         <MakeAdmin/>
-        </Route>
+        
         <AdminRoute path={`${path}/makeAdmin`}>
         <MakeAdmin/>
         </AdminRoute>
@@ -143,7 +143,7 @@ function DashBoard(props) {
        <ManageProducts/>
         </AdminRoute>
         <AdminRoute path={`${path}/manageAllOrders`}>
-        <MakeAdmin/>
+        <MyOrders/>
         </AdminRoute>
         <Route path={`${path}/review`}>
        <Review/>
@@ -152,7 +152,7 @@ function DashBoard(props) {
         <Payment/>
         </Route>
         <Route path={`${path}/myOrder`}>
-        <MakeAdmin/>
+        <MyOrders/>
         </Route>
         
       </Switch>
